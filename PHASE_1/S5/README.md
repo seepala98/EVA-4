@@ -11,16 +11,14 @@ The goal of this assignment is to apply L1 and L2 regularization on the final mo
 
 After model training, display 25 misclassified images for L1 and L2 models.
 
-### Parameters and Hyperparameters
+### Parameters
 
-- Kernel Size: 3x3
-- Loss Function: Negative Log Likelihood
 - Optimizer: SGD
 - Dropout Rate: 0.05
 - Batch Size: 64
 - Learning Rate: 0.01
-- **L1 Factor:** 0.005
-- **L2 Factor:** 0.005
+- L1 Factor: 0.005
+- L2 Factor: 0.005
 
 ## Results
 
