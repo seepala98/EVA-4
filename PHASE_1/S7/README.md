@@ -83,7 +83,7 @@ Accuracy of  ship : 92 %
 Accuracy of truck : 86 %
 ```
 # Loss Graph :
-![Image description]()
+![Image description](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S7/loss_cifar_10.png)
 
 # Accuracy Graph :
-![Image description]()
+![Image description](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S7/accuracy_cifar10.png)
