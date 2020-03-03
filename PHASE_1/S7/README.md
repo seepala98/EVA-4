@@ -4,10 +4,10 @@
 
 ## Best Accuracy on train data :
 ```
-Epoch 45:
-Loss=0.18 Batch ID=390 Accuracy=92.97: 100%|██████████| 391/391 [00:11<00:00, 33.27it/s]
+Epoch 43:
+Loss=0.22 Batch ID=390 Accuracy=92.71: 100%|██████████| 391/391 [00:15<00:00, 25.87it/s]
   0%|          | 0/391 [00:00<?, ?it/s]
-Validation set: Average loss: 0.0047, Accuracy: 8331/10000 (83.31%)
+Validation set: Average loss: 0.0044, Accuracy: 8376/10000 (83.76%)
 ```
 
 ## Layers : 
