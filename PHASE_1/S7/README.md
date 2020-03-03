@@ -1,6 +1,6 @@
 # CIFAR-10
 
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seepala98/EVA-4/blob/master/PHASE_1/S7/CIFAR_10_S7.ipynb)
 
 ## Best Accuracy on train data :
 ```
