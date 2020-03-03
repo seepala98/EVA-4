@@ -82,3 +82,8 @@ Accuracy of horse : 86 %
 Accuracy of  ship : 92 %
 Accuracy of truck : 86 %
 ```
+# Loss Graph :
+![Image description]()
+
+# Accuracy Graph :
+![Image description]()
