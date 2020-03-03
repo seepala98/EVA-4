@@ -71,14 +71,14 @@ Estimated Total Size (MB): 4.59
 
 # Val Accuracys for each class : 
 ```
-Accuracy of plane : 86 %
+Accuracy of plane : 85 %
 Accuracy of   car : 91 %
-Accuracy of  bird : 72 %
-Accuracy of   cat : 71 %
-Accuracy of  deer : 82 %
-Accuracy of   dog : 71 %
-Accuracy of  frog : 90 %
-Accuracy of horse : 80 %
-Accuracy of  ship : 91 %
-Accuracy of truck : 89 %
+Accuracy of  bird : 73 %
+Accuracy of   cat : 74 %
+Accuracy of  deer : 84 %
+Accuracy of   dog : 72 %
+Accuracy of  frog : 88 %
+Accuracy of horse : 86 %
+Accuracy of  ship : 92 %
+Accuracy of truck : 86 %
 ```
