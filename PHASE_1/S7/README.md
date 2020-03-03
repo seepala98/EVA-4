@@ -87,3 +87,7 @@ Accuracy of truck : 86 %
 
 # Accuracy Graph :
 ![Image description](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S7/accuracy_cifar10.png)
+
+## Tried implementing in a hierarchial structure but for some reason the accuracies are taking more epochs than usual to achive the 80% 
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seepala98/EVA-4/blob/master/PHASE_1/S7/base.ipynb)
