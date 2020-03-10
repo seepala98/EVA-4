@@ -1,5 +1,7 @@
 # CIFAR10 WITH RESNET18 Architecture
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seepala98/EVA-4/blob/master/PHASE_1/S8/s8.ipynb)
+
 ## Observation :
 Best Test Accuracy : 90.41 % under 30 epochs and achieved 85% accuracy in under 10 epochs consistantly
 
