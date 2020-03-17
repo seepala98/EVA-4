@@ -12,10 +12,10 @@ import cv2
 from IPython.display import Image, display
 
 class Res18(nn.Module):
-    def __init__(self, net):
+    def __init__(self, model):
         super(Res18, self).__init__()
         
-        self.res18 = net
+        self.res18 = model
 
         # disect the network to access its last convolutional layer
         self.features_conv = nn.Sequential(self.res18.conv1,
