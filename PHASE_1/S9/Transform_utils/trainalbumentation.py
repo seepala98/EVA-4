@@ -17,4 +17,3 @@ class TrainAlbumentation():
     img = np.array(img)
     img = self.train_transform(image = img)['image']
     return img
-© 2020 GitHub, Inc.
