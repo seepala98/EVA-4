@@ -1,7 +1,7 @@
 import torch
 import torchvision
-from trainalbumentation import TrainAlbumentation
-from testalbumentation import TestAlbumentation
+from Transform_utils.trainalbumentation import TrainAlbumentation
+from Transform_utils.testalbumentation import TestAlbumentation
 
 SEED = 1
 
