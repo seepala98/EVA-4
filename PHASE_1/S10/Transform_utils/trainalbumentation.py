@@ -1,4 +1,4 @@
-from albumentations import *
+from albumentations import Compose, Normalize, HorizontalFlip, CoarseDropout
 from albumentations.pytorch import ToTensor
 import numpy as np
 
