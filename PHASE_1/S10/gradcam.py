@@ -95,7 +95,7 @@ def superposeimage(heatmap, img):
   superimposed_img = heatmap1 * 0.4 + img
   cv2.imwrite('./map.jpg', superimposed_img)
 
-def gradcamof(net, img, classes):
+def gradcamof(net, img, classes, gt, pd):
   netx = Res18(net)
   netx.eval()
   
@@ -112,6 +112,8 @@ def gradcamof(net, img, classes):
   # draw the heatmap
   heatmap = getheatmap(pred, class_pred, netx, img)
   axes[1].matshow(heatmap.squeeze())
+  axes[0].set_title("Groundtruth: "+gt)
+  axes[2].set_title("Prediction: "+pd)
 
   imx = cv2.imread("./img1.png")
   imx = cv2.cvtColor(imx, cv2.COLOR_BGR2RGB)
