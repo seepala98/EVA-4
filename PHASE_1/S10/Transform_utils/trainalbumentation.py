@@ -1,4 +1,4 @@
-from albumentations import Compose, Normalize, HorizontalFlip, Cutout
+from albumentations import Compose, Normalize, HorizontalFlip, Cutout, CoarseDropout
 from albumentations.pytorch import ToTensor
 import numpy as np
 
@@ -10,8 +10,10 @@ class TrainAlbumentation():
         mean=[0.485,0.456,0.406],
         std=[0.229,0.224,0.225],
       ),
-      Cutout(num_holes=1, max_h_size=6, max_w_size=6,
+      CoarseDropout(max_holes=1, max_height=6, max_width=6,
         fill_value=[0.485, 0.456, 0.406], p=0.5),
+#       Cutout(num_holes=1, max_h_size=6, max_w_size=6,
+#         fill_value=[0.485, 0.456, 0.406], p=0.5),
       ToTensor()
     ])
 
