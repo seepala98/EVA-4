@@ -31,8 +31,8 @@ def OverallAcc(testloader, model):
 #         total += labels.size(0)
 #         correct += (predicted == labels.cuda()).sum().item()
 
-  print('Accuracy of the network on the 10000 test images: %d %%' % (
-      100 * correct / total))
+#   print('Accuracy of the network on the 10000 test images: %d %%' % (
+#       100 * correct / total))
   class_correct = list(0. for i in range(10))
   class_total = list(0. for i in range(10))
   with torch.no_grad():
