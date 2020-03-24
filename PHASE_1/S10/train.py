@@ -1,6 +1,7 @@
 import torch
 from tqdm import tqdm
 
+train_acc = []
 def train(model, train_loader, device, optimizer, criterion):
     model.train()
     pbar = tqdm(train_loader)
