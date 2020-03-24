@@ -28,3 +28,6 @@ def train(model, train_loader, device, optimizer, criterion):
         correct += pred.eq(target).sum().item()
         processed += len(data)
         pbar.set_description(desc=f'Loss={loss.item():0.2f} Batch ID={batch_idx} Accuracy={(100 * correct / processed):.2f}')
+        pbar.update(1)
+    train_acc = 100*correct/processed
+    return train_acc, loss
