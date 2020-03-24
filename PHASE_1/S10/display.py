@@ -33,6 +33,8 @@ def OverallAcc(testloader, model):
 
 #   print('Accuracy of the network on the 10000 test images: %d %%' % (
 #       100 * correct / total))
+  classes = ('plane', 'car', 'bird', 'cat',
+           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
   class_correct = list(0. for i in range(10))
   class_total = list(0. for i in range(10))
   with torch.no_grad():
