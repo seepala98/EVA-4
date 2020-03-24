@@ -2,7 +2,6 @@ import torch
 import torchvision
 import matplotlib.pyplot as plt
 import numpy as np
-import load_transform
 from lr_finder import LRFinder 
 
 # functions to show an image
