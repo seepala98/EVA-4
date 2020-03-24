@@ -21,4 +21,4 @@ def val(model, val_loader, device, criterion, losses, accuracies):
     print(f'\nValidation set: Average loss: {val_loss:.4f}, Accuracy: {correct}/{len(val_loader.dataset)} ({accuracies[-1]:.2f}%)\n')
     test_acc = (100 * correct / len(val_loader.dataset))  
 
-    return test_acc, val_loss.cpu().numpy()
+    return test_acc, val_loss
