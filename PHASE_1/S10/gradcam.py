@@ -107,7 +107,6 @@ def gradcamof(net, img, classes, gt, pd):
   save_image(imx, 'img1.png')
   class_pred = int(np.array(pred.cpu().argmax(dim=1)))
   imshow(torchvision.utils.make_grid(img),axes[0])
-  print(classes[class_pred])
 
   # draw the heatmap
   heatmap = getheatmap(pred, class_pred, netx, img)
