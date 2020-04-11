@@ -2,7 +2,7 @@ import torch
 from tqdm import tqdm
 
 train_acc = []
-def train(model, train_loader, device, optimizer, criterion):
+def train(model, train_loader, device, optimizer, epoch):
     model.train()
     pbar = tqdm(train_loader)
     correct = 0
