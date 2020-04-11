@@ -1,5 +1,5 @@
-from ../train import train , 
-from ../validation import val
+from .. import train 
+from .. import val
 import matplotlib.pyplot as plt
 import torch.optim as optim
 from models.custom_resnet import cust_resnet
