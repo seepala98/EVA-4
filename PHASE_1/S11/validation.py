@@ -1,7 +1,7 @@
 import torch
 from tqdm import tqdm
 
-def val(model, val_loader, device, criterion, losses, accuracies):
+def val(model, val_loader, device):
     model.eval()
     correct = 0
     val_loss = 0
@@ -10,7 +10,7 @@ def val(model, val_loader, device, criterion, losses, accuracies):
             img_batch = data  # This is done to keep data in CPU
             data, target = data.to(device), target.to(device)  # Get samples
             output = model(data)  # Get trained model output
-            val_loss += criterion(output, target).item()  # Sum up batch loss
+            test_loss += F.nll_loss(output, target, reduction='sum').item()  # Sum up batch loss
             pred = output.argmax(dim=1, keepdim=False)  # Get the index of the max log-probability
 
             correct += pred.eq(target).sum().item()
