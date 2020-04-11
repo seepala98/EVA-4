@@ -1,4 +1,4 @@
-from albumentations import Compose, Normalize, HorizontalFlip, Cutout
+from albumentations import Compose, Normalize, HorizontalFlip, Cutout ,Rotate ,PadIfNeeded ,RandomCrop
 #from imgaug.augmenters.arithmetic import CoarseDropout
 from albumentations.pytorch import ToTensor
 import numpy as np
