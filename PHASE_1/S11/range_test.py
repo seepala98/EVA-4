@@ -1,4 +1,4 @@
-from train import train 
+from train import train
 from validation import val
 import matplotlib.pyplot as plt
 import torch.optim as optim
