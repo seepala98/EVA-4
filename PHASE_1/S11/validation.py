@@ -7,6 +7,7 @@ def val(model, val_loader, device):
     model.eval()
     correct = 0
     val_loss = 0
+    losses = []
     with torch.no_grad():
         for data, target in val_loader:
             img_batch = data  # This is done to keep data in CPU
