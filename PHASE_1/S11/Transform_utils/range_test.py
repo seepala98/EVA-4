@@ -1,4 +1,5 @@
-from utils.train_test import train , test
+from ../train import train , 
+from ../validation import val
 import matplotlib.pyplot as plt
 import torch.optim as optim
 from models.custom_resnet import cust_resnet
@@ -14,7 +15,7 @@ def lr_range_test(lrs,model,device,train_loader, test_loader):
 		optimizer.param_groups[0]['lr'] = lr
 		print('LR:',optimizer.param_groups[0]['lr'])
 		train_acc1 = train(model, device, train_loader, optimizer, 1)
-		test_acc1 = test(model, device, test_loader)
+		test_acc1 = val(model, device, test_loader)
 		train_acc.append(train_acc1)
 		test_acc.append(test_acc1)
 	
