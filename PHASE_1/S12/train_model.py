@@ -3,8 +3,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from tqdm.notebook import tqdm
-from tqdm import tqdm_notebook
+from tqdm import tqdm
+# from tqdm.notebook import tqdm
+# from tqdm import tqdm_notebook
 
 train_losses = []
 test_losses = []
