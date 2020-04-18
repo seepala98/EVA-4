@@ -3,6 +3,7 @@ import torch
 from tqdm.notebook import tqdm
 from tqdm import tqdm_notebook
 
+train_losses = []
 train_acc = []
 def train(model, device, train_loader, optimizer, criterion, epoch,scheduler = False):
   model.train()
