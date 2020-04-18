@@ -88,6 +88,7 @@ train_loss = []
 train_loss = []
 LR = []
 train_scheduler = False
+
 def train_model(model,device,trainloader,testloader,optimizer,criterion,EPOCHS,scheduler = False,batch_scheduler = False ,best_acc = 0,path = "/content/gdrive/My Drive/API/bestmodel.pt"):
 	for epoch in range(EPOCHS):
 		print("EPOCH:", epoch+1,'LR:',optimizer.param_groups[0]['lr'])
