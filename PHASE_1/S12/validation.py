@@ -1,24 +1,27 @@
 import torch
 from tqdm import tqdm
 
-def val(model, val_loader, device, criterion, losses, accuracies):
+test_losses = []
+test_acc = []
+
+def test(model, device, criterion, test_loader):
     model.eval()
+    test_loss = 0
     correct = 0
-    val_loss = 0
     with torch.no_grad():
-        for data, target in val_loader:
-            img_batch = data  # This is done to keep data in CPU
-            data, target = data.to(device), target.to(device)  # Get samples
-            output = model(data)  # Get trained model output
-            val_loss += criterion(output, target).item()  # Sum up batch loss
-            pred = output.argmax(dim=1, keepdim=False)  # Get the index of the max log-probability
+        for data, target in tqdm(test_loader):
+            data, target = data.to(device), target.to(device)
+            output = model(data)
+            test_loss += criterion(output, target).item()  # sum up batch loss
+            pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
+            correct += pred.eq(target.view_as(pred)).sum().item()
+	
+    test_loss /= len(test_loader.dataset)
+    test_losses.append(test_loss)
 
-            correct += pred.eq(target).sum().item()
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+        test_loss, correct, len(test_loader.dataset),
+        100. * correct / len(test_loader.dataset)))
     
-    val_loss /= len(val_loader.dataset)
-    losses.append(val_loss)
-    accuracies.append(100. * correct / len(val_loader.dataset))
-    print(f'\nValidation set: Average loss: {val_loss:.4f}, Accuracy: {correct}/{len(val_loader.dataset)} ({accuracies[-1]:.2f}%)\n')
-    test_acc = (100 * correct / len(val_loader.dataset))  
-
-    return test_acc, val_loss
+    test_acc.append(100. * correct / len(test_loader.dataset))
+    return test_losses,test_acc
