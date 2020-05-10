@@ -113,3 +113,44 @@ Colab Link: https://colab.research.google.com/drive/1ygfJO2BfXNMfsiLlWLAM_poq-vX
 Github Link: [https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/S15A_04_DataVisualization.ipynb](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/S15A_04_DataVisualization.ipynb)
 
 Colab Link: https://colab.research.google.com/drive/1_eWpgpKEnJGTtQPn5t_2VtCPNYQDhxNN
+
+# How the data set has been created : 
+
+FG : Download 100 images with transparent background from the internet and clean the data and by verifying if all the images are transparent if not make them transparent by using power point .
+
+BG : Downloaded 100 images of parking spaces and empty roads from the internet. 
+
+FG_BG : take the images of fg and bg and scale them to 250,250 by using the changeImageSize code
+```
+def changeImageSize(maxWidth,maxHeight,image):
+    widthRatio = maxWidth / image.size[0]
+    heightRatio = maxHeight / image.size[1]
+    newWidth = int(widthRatio * image.size[0])
+    newHeight = int(heightRatio * image.size[1])
+    newImage = image.resize((newWidth, newHeight))
+    return newImage
+```
+Then pass the image to the changeImageSize function , use the PIL.FLIP_LEFT_RIGHT to get the left right of the image 
+
+Rescale the images:
+```
+try:
+        bg = Image.open(f'{path}bg/park{str(i)}.jpg')
+        bg = changeImageSize(250, 250, bg)
+        print(f'{path}bg/park{str(i)}.jpg')
+    except :
+        print("park not found")
+        continue
+```
+
+Left_right the fg:
+```
+flipfg = fg1.transpose(PIL.Image.FLIP_LEFT_RIGHT) 
+flipmask = m1.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+```
+
+And to get the fg placed at 20 random location on bg used random.randint(1,80).
+
+Depth model : 
+
+we need to create the depth map, by running the DenseDepth Model on our fg_bg images, this was done by taking batches of 1000.
