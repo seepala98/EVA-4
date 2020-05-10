@@ -108,7 +108,6 @@ Colab Link: https://colab.research.google.com/drive/1ygfJO2BfXNMfsiLlWLAM_poq-vX
 - Mean: `['0.185273632407188', '0.185273632407188', '0.185273632407188']`
 - Std: `['0.056562200188637', '0.056562200188637', '0.056562200188637']`
 
-There has been a data corruption in the zip file of depth_fg_bg maps due to several failues the images generated are around 269273.
 ## Dataset Visualization
 
 Github Link: [https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/S15A_04_DataVisualization.ipynb](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/S15A_04_DataVisualization.ipynb)
