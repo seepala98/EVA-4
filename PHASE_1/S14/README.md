@@ -45,7 +45,18 @@ FG_BG zip : https://drive.google.com/open?id=1kP1ItxxybZZP-djFu4Jgqsyc3KgTmR_J
 
 FG_BG_MASK : https://drive.google.com/open?id=1-9dpdC9Cq09PiMZZG-zanYQuxV2QiXvt
 
-DEPTH_MAP : https://drive.google.com/open?id=1-CL8A38YykVT7HAPqfuYBZSJHXnHtEOL
+DEPTH_MAP : (divided to 5 zip files each with 80k images)
+
+depth_1 : https://drive.google.com/open?id=1ltTX55fRiKIYulUTsXTmYXGh9qPll78U
+
+depth_2 : https://drive.google.com/open?id=1_3PDGuTzSJf6Pj0AlW7rk8WSC6ZuR4AM
+
+depth_3 : https://drive.google.com/open?id=1-3gCYT0XfjK3jcBRXnhuZhWN9wjwNQhI
+
+depth_4 : https://drive.google.com/open?id=19zh02qFNGJl4AfO6K_QFP3sPbHdgt2OC
+
+depth_5 : https://drive.google.com/open?id=1-DYPPJVmZSls1xXnRjJx7xqgQ2rPbta-
+
 
 
 ### BG Images
@@ -64,8 +75,7 @@ DEPTH_MAP : https://drive.google.com/open?id=1-CL8A38YykVT7HAPqfuYBZSJHXnHtEOL
 
 ![enter image description here](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/images/fg_bg_mask.png)
 
-### Depth_FG_BG Images
-
+### Depth_FG_BG Images 
 ![enter image description here](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S14/images/depth_images.png)
 
 ## Dataset Creation
