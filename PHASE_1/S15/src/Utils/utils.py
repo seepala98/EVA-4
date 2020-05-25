@@ -1,15 +1,11 @@
 import torchvision
 import matplotlib.pyplot as plt
 
-
-
 from zipfile import ZipFile
-
-
 
 def extract_zip(filename):
 	try:
-        with ZipFile(filename, 'r') as zip:
+		with ZipFile(filename, 'r') as zip:
             print("Extracting all the files now")
             zip.extractall()
             print("Done!")
