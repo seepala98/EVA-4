@@ -12,6 +12,7 @@ def extract_zip(filename):
 	except:
 		print("THIS FILE DOESNT EXIST")
 
+
 def show(tensors, figsize= (10,10), *args, **kwargs):
 	try:
 		tensors = tensors.detach().cpu()
