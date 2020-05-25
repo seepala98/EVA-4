@@ -75,7 +75,6 @@ Estimated Total Size (MB): 124.79
 The loss function used is a weighted average of:
 - **L1 loss**: Handles the per pixel differences.
 - **Dice Loss**: Handles luminance, contrast and structural differences.
-- **Edge Gradients**:  This computes the edges and tries to match the edges of the target and output. 
 
 The overall loss was a summation of loss for mask and depth.
 
@@ -92,6 +91,7 @@ Loss function file: [https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S15/
 
 Begin with a smaller resolution of 64x64 images and then resized it to 256. Going anything about this is drastically increasing the training per epoch time for the above mentioned resolution it was able to finish off one epoch in around ~3hr on a P100 in google Colab
 
+Training : [https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S15/src/dataset/DenseDepth.py](https://github.com/seepala98/EVA-4/blob/master/PHASE_1/S15/src/dataset/DenseDepth.py)
 
 ### Results
 Dimensions:
