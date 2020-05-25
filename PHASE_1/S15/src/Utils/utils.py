@@ -6,11 +6,11 @@ from zipfile import ZipFile
 def extract_zip(filename):
 	try:
 		with ZipFile(filename, 'r') as zip:
-            print("Extracting all the files now")
-            zip.extractall()
-            print("Done!")
-    except:
-        print("THIS FILE DOESNT EXIST")
+			print("Extracting all the files now")
+			zip.extractall()
+			print("Done!")
+	except:
+		print("THIS FILE DOESNT EXIST")
 
 def show(tensors, figsize= (10,10), *args, **kwargs):
 	try:
