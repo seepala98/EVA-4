@@ -5,6 +5,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR, OneCycleLR, MultiStepLR, CyclicLR, ReduceLROnPlateau
+from src.Utils.utils import show 
+from src.Utils.DiceLoss import DiceLoss
 
 class train:
     def train_net(net, device,train_loader, epochs , lr):
