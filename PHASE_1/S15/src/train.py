@@ -25,7 +25,7 @@ class train:
     init = datetime.datetime.now()
     for epoch in range(epochs):
       start =  datetime.datetime.now()
-      model.train()
+      net.train()
       epoch_loss = 0  
       pbar = tqdm(train_loader)
       #with tqdm(total=n_train, desc=f'Epoch {epoch + 1}/{epochs}', unit='img') as pbar:
@@ -38,7 +38,7 @@ class train:
         
         #depth_pred, masks_pred
         x = torch.cat([data['bg'], data['fg_bg']], dim=1)
-        d_out, s_out = model(x)
+        d_out, s_out = net(x)
         
         loss1 = criterion(s_out, data['fg_bg_mask'])
         loss2 = criterion(d_out, data['depth_fg_bg']) 
