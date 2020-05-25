@@ -52,37 +52,38 @@ class DenseDepth(Dataset):
     self.target_paths_mask = fg_bg_mask_paths
     self.target_paths_depth = depth_fg_bg_paths
 
-    def __getitem__(self, index):
-      bgidx = self.input_paths[index].stem.split('_')[3]
-      bgimg = Image.open(self.bg_paths[int(bgidx)])
-      bgimg = bgimg.convert('RGB')
-      # bgimg = np.array(bgimg)
+  def __getitem__(self, index):
+    bgidx = self.input_paths[index].stem.split('_')[3]
+    bgimg = Image.open(self.bg_paths[int(bgidx)])
+    bgimg = bgimg.convert('RGB')
+    # bgimg = np.array(bgimg)
 
-      fg_bgimg = Image.open(self.input_paths[index])
-      fg_bgimg = fg_bgimg.convert('RGB')
-      # fg_bgimg = np.array(fg_bgimg)
+    fg_bgimg = Image.open(self.input_paths[index])
+    fg_bgimg = fg_bgimg.convert('RGB')
+    # fg_bgimg = np.array(fg_bgimg)
+    
+    target_mask = self.target_paths_mask[index]
+    target_depth = self.target_paths_depth[index]
 
-      target_mask = self.target_paths_mask[index]
-      target_depth = self.target_paths_depth[index]
-
-      mask_fg_bgimg = Image.open(target_mask)
-      mask_fg_bgimg.convert('L')
-      mask_arr = np.array(mask_fg_bgimg)
-      mask_arr[mask_arr >= 150] = 255
-      mask_arr[mask_arr < 150] = 0
-      mask_fg_bgimg = Image.fromarray(mask_arr)
-      # mask_fg_bgimg.convert('L')
+    mask_fg_bgimg = Image.open(target_mask)
+    mask_fg_bgimg.convert('L')
+    mask_arr = np.array(mask_fg_bgimg)
+    mask_arr[mask_arr >= 150] = 255
+    mask_arr[mask_arr < 150] = 0
+    mask_fg_bgimg = Image.fromarray(mask_arr)
+    # mask_fg_bgimg.convert('L')
       
-      depth_fg_bgimg = Image.open(target_depth)
-      depth_fg_bgimg.convert('L')
-
-      if self.transform is not None:
-        bgimg = self.transform(bgimg)
-        fg_bgimg = self.transform(fg_bgimg)
-      
-      if self.target_transform is not None:
-        mask_fg_bgimg = self.target_transform(mask_fg_bgimg)
-        depth_fg_bgimg = self.target_transform(depth_fg_bgimg)
+    depth_fg_bgimg = Image.open(target_depth)
+    depth_fg_bgimg.convert('L')
+    
+    if self.transform is not None:
+      bgimg = self.transform(bgimg)
+      fg_bgimg = self.transform(fg_bgimg)
+    
+    if self.target_transform is not None:
+      mask_fg_bgimg = self.target_transform(mask_fg_bgimg)
+      depth_fg_bgimg = self.target_transform(depth_fg_bgimg)
+    
     return {'bg': bgimg, 'fg_bg': fg_bgimg, 'fg_bg_mask': mask_fg_bgimg, 'depth_fg_bg': depth_fg_bgimg}
 
   def __len__(self):
