@@ -7,6 +7,7 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR, OneCycleLR, MultiStepLR, CyclicLR, ReduceLROnPlateau
 from src.Utils.utils import show 
 from src.Utils.DiceLoss import DiceLoss
+from tqdm import tqdm
 
 class train:
   def train_net(net, device,train_loader, epochs , lr):
