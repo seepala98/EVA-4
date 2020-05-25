@@ -1,11 +1,7 @@
 import torchvision
 import matplotlib.pyplot as plt
 
-
-
 from zipfile import ZipFile
-
-
 
 def extract_zip(filename):
 	try:
