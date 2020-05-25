@@ -40,6 +40,7 @@ class train:
         
         #depth_pred, masks_pred
         x = torch.cat([data['bg'], data['fg_bg']], dim=1)
+        
         d_out, s_out = net(x)
         
         loss1 = criterion(s_out, data['fg_bg_mask'])
